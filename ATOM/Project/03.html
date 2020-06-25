@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = 'utf-8' />
+  <title>join_form</title>
+  </head>
+  <body>
+    <h3>회원 가입 양식</h3>
+    <table>
+      <form>
+
+        <tr>
+          <td> - 아이디 </td>
+          <td> <input type="text" /> </td>
+        </tr>
+
+        <tr>
+          <td> - 비밀번호 </td>
+          <td> <input type="text" /> </td>
+        </tr>
+
+        <tr>
+          <td> - 비밀번호 확인  </td>
+          <td> <input type="text" /> </td>
+        </tr>
+
+        <tr>
+          <td> - 이름 </td>
+          <td> <input type="text" /> </td>
+        </tr>
+
+        <tr>
+          <td> - 성별 </td>
+          <td>
+            <input type="radio" name="gender">남자 &nbsp;&nbsp;
+            <input type="radio" name="gender">여자 &nbsp;&nbsp;
+            <input type="radio" name="gender">기타 <br />
+            <!-- radio를 쓸때 name을 같은걸로 지정해줘야한다.아니면 각기 다른것으로 인정 -->
+          </td>
+        </tr>
+
+        <tr>
+          <td> - 전화번호 </td>
+          <td>
+            <select>
+              <option>02 </option>
+              <option>032 </option>
+              <option>123 </option>
+            </select>
+            - <input type="text" /> - <input type="text" />
+          </td>
+        </tr>
+
+        <tr>
+          <td> - 이메일 </td>
+          <td>
+            <input name="email1" type="text" />
+            @
+            <select>
+              <option >선택 </option>
+              <option >naver.com </option>
+              <option >hanmail.net </option>
+              <option >gmail.com </option>
+              <option >기타 </option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td> - 자기소개 </td>
+          <td>
+          <textarea rows="6" cols="50"></textarea>
+            </td>
+          </tr>
+
+        </form>
+      </table>
+    </body>
+</html>
