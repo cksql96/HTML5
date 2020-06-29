@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- 외부 스타일 시트를 정의하는 위치가 중요 -->
+  <link type="text/css"rel="stylesheet" href="css_override.css" />
+
+  <style>
+  p{color : blue;}
+  p{color: yellow;}
+  p{color : red;}
+  </style>
+
+  <!-- <link type="text/css"rel="stylesheet" href="css_override.css" /> -->
+  <!-- 이것을 넣으면 초록색으로 바뀐다잉, 가장 나중에 정의 되었기 때문에!! -->
+
+
+  </head>
+  <body>
+    <p>CSS가 중복 정의된 경우 어떤 것이 적용 될까? </p>
+    <!-- 적용 될건 다 적용되고 가장 나중에 정의된것이 적용 된다. -->
+  </body>
+</html>

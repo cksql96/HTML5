@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    h1[text] {
+      color: red;
+      background-color: gray;
+    }
+    p[text] {
+      color: blue;
+      background-color: yellow;
+    }
+    h1[text="attr3"] {
+      color: green;
+      background-color: pink;
+    }
+    
+  </style>
+  </head>
+
+  <body>
+    <h1 text>text 만 썻을때</h1>
+    <h1 text="attr1">text=attr1을 썻을때- style에 없는것</h1>
+    <p text="attr3">text 속성 이름 선택자 </p>
+    <h1 text="attr3">속성과 속성값 선택자</h1>
+    <p> 속성 선택 없음 </p>
+
+  </body>
+</html>
