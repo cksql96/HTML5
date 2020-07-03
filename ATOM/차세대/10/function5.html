@@ -1,0 +1,19 @@
+<script>
+  var result;
+  function add(name, n) {
+    document.write(name + " 학생이 1부터 " + n + "까지 덧셈 수행<br />");
+
+    var sum = 0;        //var 는 생략 가능한데, 이것을 for문 안에 넣으면
+                        //오류가 나거나 다른 수가 나옴.
+    for(var i = 1; i<=n; i++) {
+      sum +=i;
+    }
+    return sum;
+  }
+
+  result = add('홍길동', 10);
+  document.write("결과 : " + result + "</p>");
+
+  result = add("이영희", 100);
+  document.write("결과 : " + result + "</p>");
+</script>

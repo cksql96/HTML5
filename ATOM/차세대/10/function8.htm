@@ -1,0 +1,39 @@
+<script>
+  function add() {
+    var sum=1;
+    return sum;
+  }
+  function add(x) {
+    var sum = x+1;
+    return sum;
+  }
+  function add(x,y) {
+    var sum= x+y;
+    return sum;
+  }
+  function add(x,y,z) {
+    var sum=x+y+z;
+    return sum;
+  }
+
+  //이름이 같으면 맨 마지막에 정의된 함수를 따라가는것 같음
+  //함수 안에 적용될 변수들보다 적으면 NAN으로 표시가 되고,
+  //많으면 변수들 수만큼 제한해서 앞에것들만 가져간채로, 수행한다.
+
+  //그러나 함수 안에서 if 문을 써주면 가능함!!! 9번 참조
+
+  var r0=add();
+  var r1=add(1);
+  var r2=add(2,3);
+  var r3=add(4,5,6);
+  var r4=add(7,8,9,10);
+
+  document.write("함수 호출 인자 없음 : " + r0 + "</p>");
+  document.write("함수 호출 인자 부족 : " + r1 + "</p>");
+  document.write("함수 호출 인자 부족 : " + r2 + "</p>");
+  document.write("정상적인 함수 호출 : " + r3 + "</p>");
+  document.write("7,8,9,10이나 7,8,9만 적용 : " + r4 + "</p>");
+
+
+
+</script>

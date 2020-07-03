@@ -1,0 +1,14 @@
+<script>
+  var text1="함수 선언 전 호출 에러";
+  var text2="함수 선언 후 호출만 가능";
+  //printMsg(text1);                    //함수 선언 전 호출 에러
+  var printMsg=function(msg) {      //함수 객체 선언(무명 함수)
+    //1번과 다른게, 이것은 함수 자체를 선언해주기보다는
+    //객체를 만들어서, 그것을 함수화 했기 때문에 그런것 같다.
+    document.write("함수 호출 메시지 : " + msg + "<br />");
+  }
+  printMsg(text2);
+
+
+
+</script>
