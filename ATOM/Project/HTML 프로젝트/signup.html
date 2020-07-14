@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @import url('pageCss.css');
+  </style>
+</head>
+
+<body>
+
+  <center>
+    <div id="header">
+      <div id="page">
+        <a href="signup_in.html">
+          <c id="blue">Sign</c>
+        </a>
+        <a style="color:rgb(27, 196, 65);">Up</a>
+      </div>
+    </div>
+  </center>
+  <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+  <br />
+
+  <center>
+    <table>
+      <td>
+        <a href="CHAN.html">
+          <div id="logo">
+            <img src="1.jpg" height="50" width="50" />
+            <b>
+              <c id="blue" style="font-size: 55px;">CHAN</c>
+            </b>
+          </div>
+        </a>
+      </td>
+    </table>
+    <hr />
+  </center>
+  <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+  <br />
+  <center>
+    <table>
+      <tr>
+        <td>
+          찬하의 주민번호 앞 6자리는?
+        </td>
+        <td>
+          <input type="text" placeholder="예)990101" id="SSN" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          찬하는 몇학번인가요?
+        </td>
+        <td>
+          <input type="text" placeholder="예)16" id="SID" />
+        </td>
+      </tr>
+    </table>
+
+    <button type="submit" id="checkSignUp" onclick="check();">제출하기</button>
+    <button type="submit" id="return" onclick="location.href='signup_in.html'">돌아가기</button>
+
+    <script>
+      function check() {
+        var inputSSN = document.getElementById("SSN").value;
+        temp1 = inputSSN;
+        var inputGf = document.getElementById("SID").value;
+        temp2 = inputGf;
+
+        if (temp1 == 960703 && temp2 == 12) {
+          alert("맞췄습니다.");
+          location.href = "signup1.html";
+        } else {
+          alert("틀렸습니다.");
+          location.href = "signup_in.html";
+        }
+      }
+    </script>
+  </center>
+
+
+</body>
+
+</html>
