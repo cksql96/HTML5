@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>    
+</head>
+
+<body>
+    
+    <h3>문의 게시판 글쓰기</h3>
+
+    <form method="GET" action="" enctype="multipart/form-data">
+
+        <table>
+
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id" value="chan"></td>
+            </tr>
+
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="text" name="pw"></td>
+            </tr>
+
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email_id">@
+                    <select name="email_dn">
+                        <option>선택</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option>직접입력</option>
+                    </select>                
+                </td>
+            </tr>
+
+            <tr>
+                <td>제목</td>
+                <td><input type="text" name="title"></td>
+            </tr>
+
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content" cols="50" rows="6"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>파일 첨부</td>
+                <td><input type="file" name="attachedFile"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>5MB 이하의 파일만 첨부 가능합니다.</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" value="확인"></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+
+</html>
