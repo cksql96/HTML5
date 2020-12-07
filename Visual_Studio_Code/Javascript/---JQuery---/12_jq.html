@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function() {
+            console.clear();
+
+            $("button.move").click(function() {
+
+                $("img").animate( {
+                    left: '300px',
+                    height: '300px',
+                    width: '350px'
+                }, 'slow'); //img.animate
+
+            }); //button.move.click
+
+            $("button.init").click(function() {
+
+                $("img").animate( {
+                    left: '0px',
+                    height: '100px',
+                    width: '130px'
+                }, 'fast'); //img.animate
+
+            }); //button.init.click
+
+        }); //JQuery
+
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+    <button class="move">확대</button>
+    <button class="init">축소</button>
+
+    <p></p>
+
+    <img 
+        src="https://picsum.photos/600/400" 
+        name="pic1"
+        width="130" 
+        height="100" 
+        style="position:relative" />
+</html>

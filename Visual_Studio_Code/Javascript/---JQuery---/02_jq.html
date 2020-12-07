@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            console.log("document.ready() invoked...");
+
+            $("button.hide").click(function() {
+                console.log("button.hide() invoked...");
+
+                $("p").hide();
+            });  //button.hide.click
+
+            $("button.show").click(function() {
+                console.log("button.show() invoked...");
+
+                $("p").show();
+            });  //button.show.click
+        });  //document.ready
+
+    </script>
+</head>
+
+<body>
+    <p>문서준비 이벤트에는 여러 다중 이벤트를 정의할 수 있습니다.</p>
+    <p>버튼을 클릭하면 이벤트를 처리합니다.</p>
+
+    <button class="hide">메시지 삭제</button>
+    <button class="show">메시지 보기</button>
+</body>
+
+</html>

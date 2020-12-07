@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            console.log("document.ready(function()) invoked...");
+
+            $("button").click(function () {
+                console.log("button.click(function()) invoked...");
+
+                $("p").hide();
+            })  //button.click
+        })  //document.ready
+    </script>
+</head>
+
+<body>
+    <p>메시지: 제이쿼리를 공부</p>
+    <button>메시지 삭제</button>
+</body>
+
+</html>

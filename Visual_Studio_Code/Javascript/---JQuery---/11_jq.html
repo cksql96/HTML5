@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script> 
+        $(document).ready(function() {
+
+            $("button.b1").click(function() {
+                $("img").animate( {
+                    width: '100px'
+                }, 2000);
+            });
+            
+	        $("button.b2").click(function() {
+                $("img").animate( {
+                    width: '200px'
+                }, 'normal');
+            });
+            
+            $("button.b3").click(function() {
+                $("img").animate( {
+                    width: '300px'
+                }, 'fast');
+            });
+            
+        });
+    </script> 
+
+    <style>
+        .css_pic {
+            height: 430px;
+            text-align: center;
+        }
+        .css_pic img {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="css_pic">
+        버튼을 누르면 그림의 크기가 바뀝니다.</p>
+        <button class="b1">가로 100픽셀</button>
+        <button class="b2">가로 200픽셀</button>
+        <button class="b3">가로 300픽셀</button><br><br>
+        <img name="pic" src="https://picsum.photos/300/300"/>
+    </div>
+</body>
+</html>

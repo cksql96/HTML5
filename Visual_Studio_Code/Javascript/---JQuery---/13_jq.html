@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function() {
+            console.clear()
+
+            $("#hide").click(function() {
+
+                $("img").hide("slow");
+            }); //#hide.click
+
+            $("#show").click(function() {
+
+                $("img").show("fast");
+            }); //#show.click
+
+            $("#toggle").click(function() {
+
+                $("img").toggle(3000);
+            }); //#show.click
+
+        })  //JQuery
+
+    </script>
+
+</head>
+
+<body>
+    
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+
+    <p></p>
+
+    <img src="https://picsum.photos/300/200" alt="사진이없네요" name="pic1">
+</body>
+
+</html>

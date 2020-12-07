@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .moving{
+            border: 1px solid #000000;
+            margin: 20px auto 0 auto;
+            text-align: right;
+            width: 550px;
+        }
+        .moving img{
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        function move(obj, time) {
+
+            $(obj).stop().animate( {
+                left: -350,
+                top: 0
+            }, time);
+        }   //move(obj, time)
+
+        function back(css) {
+
+            $(css).stop().animate({
+                left: 0,
+                top: 0
+            });
+        }   //back(css)
+    </script>
+    
+</head>
+
+<body>
+    <div class="init">
+        <button type="button" onclick="back('.moving img')">초기화 상태</button>
+    </div>
+
+    <div class="moving">
+        <img src="https://picsum.photos/id/100/100/100" alt="없음" onclick="move(this, 6000)">
+        <img src="https://picsum.photos/id/200/100/100" alt="없음" onclick="move(this, 3000)">
+        <img src="https://picsum.photos/id/300/100/100" alt="없음" onclick="move(this, 1000)">
+    </div>
+</body>
+
+</html>

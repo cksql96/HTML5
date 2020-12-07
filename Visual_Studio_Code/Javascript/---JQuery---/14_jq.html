@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function() {
+            console.clear()
+
+            $("#out").click(function() {
+
+                $("img").fadeOut("slow");
+            }); //#out.click
+
+            $("#in").click(function() {
+
+                $("img").fadeIn("slow");
+            }); //#in.click
+
+            $("#toggle").click(function() {
+
+                $("img").fadeToggle("slow");
+            }); //#toggle.click
+
+            $("#to50").click(function() {
+
+                $("img").fadeTo("slow", 0.5);
+            }); //#to50.click
+
+            $("#to10").click(function() {
+
+                $("img").fadeTo("slow", 0.1);
+            }); //#to10.click
+
+            $("#to100").click(function() {
+
+                $("img").fadeTo("slow", 1.0);
+            }); //#to100.click
+
+        })  //JQuery
+
+    </script>
+</head>
+
+<body>
+    
+    <button id="out">fade Out</button>
+    <button id="in">fade In</button>
+    <button id="toggle">fade Toggle</button>
+
+    <button id="to50">opacity 50%</button>
+    <button id="to10">opacity 90%</button>
+    <button id="to100">opacity 0%</button>
+
+    <p></p>
+    
+    <img src="https://picsum.photos/300/200" alt="없어" name="pic1">
+</body>
+
+</html>

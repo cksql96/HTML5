@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(e) {
+            console.log("document.ready() invoked...");
+            console.log(e);
+            console.log(e === $);
+
+            $("ans").hide();
+            console.log("ans.hide() invoked...");
+
+            $("p.q1").click(function(e) {
+                console.log("p.q1.click(e) invoked...");
+                console.log(e);
+
+                $("ans.q1").show();
+            }); //p.q1.click
+
+            $("ans.q1").click(function() {
+                console.log("ans.q1.click() invoked...");
+
+                $(this).hide();
+            }); //ans.q1.click
+
+            $("p.q2").click(function() {
+                console.log("p.q2.click() invoked...");
+
+                $("ans.q2").show();
+            }); //p.q2.click
+
+            $("ans.q2").click(function () {
+                console.log("ans.q2.click() invoked...");
+
+                $(this).hide();
+            }); //ans.q2.click
+
+        })  //document.ready
+    </script>
+
+</head>
+
+<body>
+    <h2>질문1: 대한민국 수도</h2>
+    <p class="q1">[정답보기]</p>
+    <ans class="q1">서울</ans>
+
+    <br /><br />
+
+    <h2>질문2: 대한민국 국보1호</h2>
+    <p class="q2">[정답보기]</p>
+    <ans class="q2">숭례문</ans>
+    
+</body>
+
+</html>

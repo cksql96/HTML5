@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #slide, #panel, #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 70px;
+            display: none;
+            background-color: #ffff00;
+        }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        // $(document).ready(function() {   //original version         
+        $(function() {                      //short cut
+            console.clear();
+
+            $("#panel").click(function() {
+
+                $("#panel").slideUp("fast");
+            }); //#panel.click
+
+            $("#slide").click(function() {
+
+                $("#panel").slideDown(5000);
+            }); //#slide.click
+
+            $("#flip").click(function() {
+
+                $("#panel").slideToggle("slow");
+            }); //#flip.click
+
+            $("#stop").click(function() {
+
+                $("#panel").stop();
+            }); //#stop.click
+        })
+        
+    </script>
+
+
+</head>
+
+<body>
+    
+    <div id="slide">[오늘의 공지사항]</div>
+    <div id="panel">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum iusto molestias incidunt ducimus 
+        deleniti vero, omnis nobis suscipit eum sapiente dignissimos voluptatum nesciunt eaque, excepturi distinctio 
+        dolores cupiditate veniam dolore?</div>
+    <div id="flip">Toggle slide</div>
+
+    <p></p>
+
+    <button id="stop">Stop sliding</button>
+</body>
+
+</html>
