@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ndata1 = [19, 38, 67, 26, 55, 24, 53, 12, 31];
+        var ndata2 = [132, 2, 41, 123, 45, 1234, 6, 29, 4567];
+
+        var edata = ["apple", "Html", "Game", "computer", "java"];
+        var kdata = ["서울", "부산", "구포", "대구", "인천"];
+
+        console.log("수치정렬1:", ndata1.sort());
+        console.log("수치정렬2:", ndata2.sort());
+
+        
+        console.log("수치정렬2:", 
+            ndata2.sort(
+                //수치를 원소로 가지는 배열의 원소가
+                //서로 자릿수가 틀린 수치를 원소를 가지는 배열을
+                //정렬할때에는, 아래와 같이 비교자(Comparator)를 제공해야만
+                //제대로 정렬이 가능하고, 내림차순/오름차순을 제어할 수 있다.
+                function(a, b) {
+                    return a - b;
+                }   //functioin
+            )   //sort
+        );  //console
+
+        console.log("영문정렬:", edata.sort());
+        console.log("한글정렬:", kdata.sort());
+
+        console.log("=================================");
+
+        console.log("ndata1:", ndata1);
+        console.log("ndata2:", ndata2);
+
+        console.log("edata:", edata);
+        console.log("kdata:", kdata);
+    </script>
+</body>
+
+</html>

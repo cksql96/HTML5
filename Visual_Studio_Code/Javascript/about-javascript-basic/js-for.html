@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var num = 1;
+
+        for(/*var num = 1*/ ; num <= 5; num++) {
+            console.log("for문 수행:", num)
+        }   //for
+
+        console.log("------------------");
+
+        var st = "ABCDEF";
+        var ct;
+
+        for(num = 1, ct = st.length; num < ct; num++) {
+            console.log("for문 수행:", num);
+        }   //for
+
+        console.log("------------------");
+
+        ct = st.length;
+        num = 1;
+
+        for( ; num < ct; ) {
+            console.log("for문 수행:", num);
+
+            num++
+        }   //for
+
+        console.log("------------------");
+
+        num = 1;
+         for( ; ; ) {
+
+             if(num < ct) {
+                 console.log("for문 수행:", num);
+                 num ++;
+                 continue;
+             }  //if
+
+             break;
+         }  //for
+
+         console.log("------------------");
+
+         for(var x = 2; x < 6; x++) {
+            console.log("------" + x +"단-----")
+            for(var y = 1; y < 10; y++) {
+                console.log(x + "x" + y + "=" + (x*y));
+            }   //inner for
+
+         }  //for
+    </script>
+
+</body>
+
+</html>

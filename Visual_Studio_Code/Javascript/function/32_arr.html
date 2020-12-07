@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var kdata = ['서울', '부산', '청주', '대구'];
+
+        function printArr(item, index) {
+            console.log("printArr(item, index) invoked...");
+
+            console.log("배열데이터[" + index + "]: " + item);
+        }   //printArr
+
+        kdata.forEach(printArr);
+    </script>
+</body>
+
+</html>

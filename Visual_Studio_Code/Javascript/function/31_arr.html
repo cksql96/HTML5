@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var kdata = ['서울', '부산'];
+        var p1 = kdata.unshift('청주', '세종');         //unshift는 추가.(삽입) -> 맨 앞에다가. 그래서 많으면 속도 느려짐.
+
+        console.log("데이터:", p1);
+        console.log("배열데이터:", kdata);
+
+        var p2 = kdata.shift();                         //shift는 삭제(제거)
+
+        console.log("데이터:", p2);
+        console.log("배열데이터:", kdata);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+
+        var city = [];
+
+        city[0] = "Seoul";
+        city[1] = "Busan";
+        city[2] = "Incehon";
+        city[3] = "Mokpo";
+        city[4] = "Sejeong";
+
+        function printArr() {
+            console.log("printArr() invoked...");
+
+            var i;
+
+            for(cityname of city) {
+                console.log("cityname: " + cityname);
+            }   //enhanced for
+
+        }   //printArr
+
+        printArr();
+    </script>
+</body>
+
+</html>

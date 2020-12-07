@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var x = 1;
+        var sum = 0;
+
+        while(x <= 100) {
+            sum += x++;
+        }   //while
+
+        console.log("1~100까지의 합", sum);
+
+        console.log("--------------------");
+
+        x = 1;
+        sum = 0;
+        
+        while(1) {
+            sum += x++;
+
+            if(x == 10001) {
+                break;
+            }   //if
+
+        }   //while
+
+        console.log("1~10000까지의 합", sum);
+
+        console.log("--------------------");
+
+        x = 1;
+        sum = 0;
+
+        do {
+            sum += x++;
+        } while(x <= 100);
+
+        console.log("1~100까지의 합", sum);
+
+        console.log("--------------------");
+
+        x = 0;
+        sum = 0;
+
+        while(x <= 100) {
+            x ++;
+
+            if(x % 3 == 0) {
+                console.log(x);
+
+                sum += x;
+            }   //if
+
+        }   //while
+
+        console.log("합계는", sum);
+
+
+    </script>
+
+</body>
+
+</html>

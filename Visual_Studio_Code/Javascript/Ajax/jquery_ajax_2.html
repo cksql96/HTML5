@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function() {
+            console.clear();
+
+            $.ajax({    //JQuery 라이브러리의 AJax 핵심구현 메소드
+                //로컬/원격 요청 URL지정
+                url: "js/MOCK_DATA.json",
+                // url: "js/MOCK_DATA1.json",   //오류를 보고싶으면 이것을 만들어라.
+                //요청한 문서의 타입(유형)지정
+                dataType: "json",
+
+                //비동기 요청에 대한 응답이 성공적으로 왔을때, 자동으로
+                //callback되는 메소드
+                success: function(data) {   //data는 변수명이다. 아무거나 지어도 된다. doc도 추천.
+
+                    //Json Binding into DOM tree.
+                    if(data.length > 0) {
+                        var tb = $("<table />");                    //셀렉터가 지정한 Table태그를 생성.
+
+                        //for in 은 key값 즉 index값. of 는 value값 즉 원소의 값.
+                        for(var i in data) {
+                            var $id = data[i].id;   //변수 $id에, data라는 map방식으로 이뤄진 변수에 있는 id값을 집어넣는다.
+                            var $first_name = data[i].first_name;   //위와 같다.
+                            var $last_name = data[i].last_name;     //위와 같다.
+                            var $email = data[i].email;             //위와 같다.
+                            var $gender = data[i].gender;           //위와 같다.
+
+                            var row = $("<tr />").append(           //새로운 tr태그를 생성.append(여러가지를 붙이겠다.)
+                                $("<td />").text($id),              //새로운 td태그를 생성.text로만드는데($id의 값을 가져온다.)
+                                $("<td />").text($first_name),      //위와 같다. text로 만들면, 태그도 글자로 나오고,
+                                $("<td />").text($last_name),       //위와 같다. html로 만들면, 태그도 적용.
+                                $("<td />").text($email),           //위와 같다.
+                                $("<td />").text($gender)           //위와 같다.
+                            );  //row.append
+
+                            tb.append(row);         //table태그가 완성된 tb뒤에 row를 붙인다.
+                        }   //endhanced for-in
+
+                        $(".wrap").append(tb);      //셀렉터가 선택한 태그에, append하여 tb를 붙여라(tb는 "<table />")
+                    }   //if
+
+                },   //success: function(data)
+
+                //비동기 요청에 대한 응답이 에러로 왔을때, 자동으로 callback 되는 메소드이다.
+                error: function(XHR) {    //익명함수 생성
+                    console.log("$.ajax::error() invoked...");
+
+                    console.log("XHR:", XHR);
+                    // console.log("XHR.error():", XHR.error());
+                    // console.log("XHR.readyState:", XHR.readyState);
+                    console.log("XHR.status:", XHR.status);
+                    console.log("XHR.statusText:", XHR.statusText);
+
+                    console.log(XHR.status + " " + XHR.statusText);
+                    console.log(XHR.status, XHR.statusText);
+                }   //error: function
+
+            }); //Ajax
+
+        }); //JQuery
+    </script>
+</head>
+
+<body>
+    
+    <div class="wrap"></div>
+</body>
+
+</html>

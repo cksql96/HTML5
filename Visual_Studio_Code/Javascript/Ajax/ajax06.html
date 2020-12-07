@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js"></script>
+
+    <script src="./js/window_event_handlers.js"></script>
+    <script src="./js/aJax_globalEvents_Lifecycle.js"></script>
+    <script src="./js/ajax_common_setup.js"></script>
+
+    <script>
+
+        $(function() {
+            console.clear();
+
+            $.ajax({
+                url: "./doc/persons.xml",
+                type: "GET",
+                dataType: "XML",
+                timeout: 1000,
+
+                success: function(doc, status, XHR) {
+
+                    //XML Binding
+                    var xml = $(doc).find("student");
+
+                    if(xml.length > 0) {
+                        var tb = $("<table/>");
+
+                        $.each(xml, function(index, student) {
+                            var $id = $(student).find("id").text();
+                            var $first_name = $(student).find("first_name").text();
+                            var $last_name = $(student).find("last_name").text();
+                            var $email = $(student).find("email").text();
+                            var $gender = $(student).find("gender").text();
+
+                            var row = $("<tr/>").append(
+                                    $("<td/>").text($id),
+                                    $("<td/>").text($first_name),
+                                    $("<td/>").text($last_name),
+                                    $("<td/>").text($email),
+                                    $("<td/>").text($gender)
+                            );  //append
+
+                            tb.append(row);
+                        }); //$.each
+
+                        $(".wrap").append(tb);
+                    } else{
+                        $(".wrap").html("<h2>No data found.</h2>");
+                    }   //if-else
+
+                },   //success
+
+                error: function(e) {
+                    $(".wrap").html("<h2>Error!!!!</h2>");
+                }   //error
+
+            }); //.ajax
+
+        }); //jquery
+    </script>
+</head>
+
+<body>
+    
+    <div class="wrap"></div>
+
+</body>
+
+</html>

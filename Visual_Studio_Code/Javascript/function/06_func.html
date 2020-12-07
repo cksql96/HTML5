@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(name, n) {
+            console.log("add(name,n) invoked...");
+            
+            console.log(name + " 학생이 1부터 " + n + "까지 덧셈수행");
+
+            var sum = 0;
+
+            for(var i = 1; i <= n; i++) {
+                sum += i;
+            }   //for
+
+            return sum;
+        }   //add
+
+        console.log("결과: " + add("홍길동", 10));
+        console.log("결과: " + add("이영희", 100));
+    </script>
+</body>
+
+</html>

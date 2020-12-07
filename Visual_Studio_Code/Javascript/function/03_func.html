@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var text1="함수 선언 전 호출 에러";
+        var text2="함수 선언 후 호출만 가능";
+
+        // printMsg(text1);     //함수 객체 선언 전 호출 불가
+
+        var printMsg=function(msg) {
+            console.log("함수 호출 메시지: " + msg);
+        }   //printMsg  -> 함수 객체 선언
+
+        printMsg(text2);
+
+        console.log(window);
+    </script>
+</body>
+
+</html>

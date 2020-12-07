@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function() {
+
+            $.ajax({
+                url: "js/students.xml",
+                dataType: "xml",
+
+                //비동기 요청에 대한 응답이 성공적으로 올때, 
+                //자동으로 호출되는 callback
+                success: function(data) {   //현재의 DOM tree에 바인딩
+                    console.log("success(" + data + ") invoked...");
+
+                    //받아온 XML문서에서 <student> 태그를 모두 찾아라.
+                    var $data = $(data).find("student");        //이것의 결과의 타입은?? 멀까: 배열.
+                    console.log("$data:", $data);
+
+                    // for(var index of $data) {
+                    //     console.log("index:", index);
+
+                    //     var $id = $(index).find("id").text();
+                    //     var $first_name = $(index).find("first_name").text();
+                    //     var $last_name = $(index).find("last_name").text();
+                    //     var $email = $(index).find("email").text();
+                    //     var $gender = $(index).find("gender").text();
+
+                    //     console.log("id:", $id);
+                    //     console.log("first_name:", $first_name);
+                    //     console.log("last_name:", $last_name);
+                    //     console.log("email:", $email);
+                    //     console.log("gender:", $gender);
+                    // }   //enhanced for-of 가능!! 하지만 for-in은 안된다. 
+
+                    if($data.length > 0) {          //1개 이상의 요소가 있다면?
+                        var tb = $("<table />");    //새로운 태그 생성
+
+                        //배열객체(Jquery 배열 객체)의 모든 원소를 순회하는 제이쿼리 메소드임.
+                        $.each($data, function(i, o) {  //i: index, o: element
+                            // console.log("i:",i,"o:",o);
+
+                            //각 학생의 정보항목들의 값을 획득
+                            var $id = $(o).find("id").text();
+                            var $first_name = $(o).find("first_name").text();
+                            var $last_name = $(o).find("last_name").text();
+                            var $email = $(o).find("email").text();
+                            var $gender = $(o).find("gender").text();
+
+                            //위에서 얻어낸 각 학생의 정보항목들을 가지고,
+                            //<table>태그의 하위태그로 <tr>, <td>태그를 생성하고,
+                            //<td>태그의 값을 학생정보항목으로 채우고,
+                            //<tr>태그에 <td>태그들을 모두 하위 노드로 추가(append).
+                            var row = $("<tr />").append(
+                                $("<td />").text($id),
+                                $("<td />").text($first_name),
+                                $("<td />").text($last_name),
+                                $("<td />").text($email),
+                                $("<td />").text($gender)
+                            );   //row append
+
+                            //위에서 완성시킨 <tr>태그를 <table>태그의 하위노드로 추가.
+                            tb.append(row);
+                        });  //$.each($data, function(i,o))
+
+                        $(".wrap").append(tb);
+                    }   //if
+
+                },   //success: function(data)
+
+                error: function(XHR) {
+                    
+                }   //error
+
+            });  //.ajax
+
+        });  //jquery
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>

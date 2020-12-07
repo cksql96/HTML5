@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var city01 = ["1서울", "1부산", "1대전"];
+        var city02 = ["2대구", "2광주", "2인천"];
+        var city03 = ["3전주", "3부여", "3세종"];
+
+        var data1 = city01.concat("수원", "오산");
+        var data2 = city01.concat(city02);
+        var data3 = city01.concat(city03, city02);
+
+        console.log("결과1:", data1);
+        console.log("결과2:", data2);
+        console.log("결과3:", data3);
+
+
+    </script>
+</body>
+
+</html>

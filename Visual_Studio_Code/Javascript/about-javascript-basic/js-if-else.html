@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var gender = "M";
+        var age = 21;
+
+        if(gender == "M") {
+
+            if(age >= 19) {
+                result = "남자 성인 입니다.";
+            } 
+            else {
+                result = "남자 미성년자 입니다.";
+            }   //inner if-else
+            
+        } 
+        else {
+
+            if(age >= 19) {
+                result = "여자 성인 입니다.";
+            } 
+            else {
+                result = "여자 미성년자 입니다.";
+            }   //inner else-if
+
+        }   //if-else
+
+        console.log("당신은", result);
+    </script>
+
+</body>
+
+</html>

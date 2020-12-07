@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+
+        function getGrade() {
+            var kor = 95;                   //지역변수
+            console.log("함수안의 지역변수 kor: ", kor);
+        }   //getGrade
+
+        var kor = 100;                      //전역변수
+        console.log("함수밖의 전역변수 kor: ", kor);
+
+        getGrade();                         //함수호출
+
+        console.log("국어점수: ", kor);      //전역변수가 찍힌다.
+                                            //지역변수는 밖에서 못씀.
+
+        console.log("----------------------------------");
+
+        function getGrade2() {
+            eng = 30;                       //전역변수
+            console.log("함수안의 전역변수 eng: " + eng);
+        }   //getGrade2
+
+        var eng = 50;                      //전역변수
+        console.log("함수밖의 전역변수 eng: ", eng);
+
+        getGrade2();                        //함수호출
+
+        console.log("영어점수: ", eng);
+
+        console.log("----------------------------------");
+
+        function getGrade3() {              //함수
+            var sci = 10;                   //지역변수
+        }   //getGrade3
+
+        getGrade3();                        //함수호출
+
+        console.log("지역 변수 값은 함수 외부에서 사용 불가!");
+        // console.log("과학점수:", sci);
+
+        console.log("----------------------------------");
+
+        function getGrade4() {
+            var soc = 95;           //지역변수
+
+            return soc;             //지역변수값을 return해준다.
+        }   //getGrade4
+
+        getSoc = getGrade4();       //getGrade4의 return값을
+                                    //getSoc라는 전역변수에 넣어준다.
+        console.log("사회점수:", getSoc);
+
+    </script>
+
+</body>
+
+</html>

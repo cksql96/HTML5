@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [21,42,33,14,25,12,37,28,16,11];
+
+        function filterArr(value) {
+            console.log("filterArr(" + value + ") invoked...");
+
+            for(var i = 2; i < value; i++) {
+                if(value % i == 0) {
+                    return false;
+                }   //if
+
+            }   //for
+
+            return true;
+            // return value;
+        }   //fiterArr
+
+        //배열의 각 원소에 대해, 우리가 지정한 조건에 부합하는
+        //원소만 필터링 수행!!
+        var fdata = data.filter(filterArr);
+
+        console.log("필터전 배열:", data);
+        console.log("필터후 배열:", fdata);
+    </script>
+</body>
+
+</html>

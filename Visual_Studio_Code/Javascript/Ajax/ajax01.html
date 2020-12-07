@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js"></script>
+
+    <script src="./js/window_event_handlers.js"></script>
+    <script src="./js/aJax_globalEvents_Lifecycle.js"></script>
+    <script src="./js/ajax_common_setup.js"></script>
+
+
+    <script>
+
+        $(function (param) {
+            console.clear();
+
+            console.debug(">>> onready for document event triggered.");
+            console.debug("\t+param:", param, ", param ===$:", param === $ && param === jQuery);
+
+            $("#btnLoad1").click(function (e) {
+                console.log(">>> onclick event on #btnLoad1 triggered.");
+                console.log("\t+e:", e);
+                console.log("\tthis:", this, ", $(this):", $(this) );
+
+                //-------------------------------------------------------------//
+                //Ajax request & processing
+                //-------------------------------------------------------------//
+                $.ajax({
+                    url: "./doc/studentinfo.xml",                    
+                    type: "GET",
+                    dataType: "XML",
+                    timeout: 1000,
+
+                    //(1)aJax local events lifecycle method
+                    beforeSend: function(XHR) {
+                        console.log("********************************");
+                        console.log("1.beforeSend(XHR) invoked...");
+                        console.log("********************************");
+
+                        printXHR1(XHR);
+                    },  //beforeSend
+
+                    //(2)aJax local events lifecycle method
+                    success: function(doc, status, XHR) {
+                        console.log("********************************");
+                        console.log("2.success(doc, XHR$state, XHR) invoked...");
+                        console.log("********************************");
+
+                        console.log("+doc:", doc, ", $(this):", $(this) );
+                        console.log("+status:", status);
+
+                        printXHR1(XHR);
+
+                        var students = $(doc).find("student");
+                        console.log("\n+students:", students);
+
+                        var tagList = "";
+
+                        students.each(function (index) {
+                            console.log("\t+index:", index, ", $(this):", $(this) );
+                            
+                            tagList += "<li>" + $(this).find("gradepoint").text() + "</li>\n";
+                        }); //student.each(function (index))
+
+                        // console.log("\t+tagList:\n", tagList);
+
+                        $("#listArea").empty();
+                        $("#listArea").append(tagList);
+                        $("#listArea").listview("refresh");     // jquery-mobile method
+
+                    },   //success
+
+                    error: function(XHR) {
+                        console.log("********************************");
+                        console.log("2.error(XHR) invoked...");
+                        console.log("********************************");
+
+                        printXHR1(XHR);
+
+                        $("#listArea").html("<p>Ajax error occured.</p>");
+                    },  //error
+
+                    complete: function(XHR) {
+                        console.log("********************************");
+                        console.log("2.complete(XHR) invoked...");
+                        console.log("********************************");
+
+                        printXHR1(XHR);
+                    }   //complete
+
+                });  //.ajax
+
+            });  //#btnLoad1.click
+        });  //JQuery
+    </script>
+
+</head>
+
+<body>
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>Ajax활용</h1>
+        </div>
+
+        <div data-role="content">
+
+            <button id="btnLoad1" data-inline="true">XML</button>
+            <button id="btnLoad2" data-inline="true">JSON</button>
+            <button id="btnLoad3" data-inline="true">HTML</button>
+
+            <p></p>
+
+            <ul data-role="listview" id="listArea" data-insect="true">
+                <li id="item">데이터 로드하기전....</li>
+            </ul>
+
+        </div>
+
+        <div data-role="footer">
+            <h4>꼬리말</h4>
+        </div>
+
+    </div>
+</body>
+
+</html>

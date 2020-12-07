@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>js-순서</title>
+
+    <script>
+        var num = 0;
+
+        console.log("실행순서: " + num);                        //print num to web browser console
+        document.write("실행순서: " + num + "<br />");          //print num to web browser viewPort
+        // document.writeln("실행순서: " + num + "<br />");     //print num to web browser viewPort
+        num = '바보';
+        console.log("-------------> " + num);                   //print num to web browser console
+        document.write("-------------> " + num + "<br />");     //print num to web browser viewPort
+    </script>
+    <hr>
+    
+    <script>
+        var num = 1;
+
+        console.log("실행순서:", num);                          //console에서 ',' 를 찍으면 한칸 띄워서 추가된다.
+        document.write("실행순서: " + num, "<br />");           //document는 해당사항 없다.
+        // document.writeln("실행순서: " + num + "<br />"); 
+        console.log("------------->", "멍청이");
+        document.write("-------------> ", "멍청이", "<br />");
+    </script>
+    <hr>
+
+</head>
+
+<body>
+    
+    <script>
+        var num = 2;
+
+        console.log("실행순서:", num);
+        document.write("실행순서: ", num, "<br />");
+        //document.writeln("실행순서: ", num, "<br />");
+        console.log("------------->" + "해삼");
+        document.write("-------------> " + "해삼" + "<br />");
+    </script>
+    <hr>
+
+    <script>
+        var num = 3;
+
+        console.log("실행순서:", num);
+        document.write("실행순서: ", num, "<br />");
+        //document.writeln("실행순서: ", num, "<br />");
+
+        console.log("------------->" + "멍게");
+        document.write("-------------> " + "멍게" + "<br />");
+    </script>
+    <hr>
+
+</body>
+</html>

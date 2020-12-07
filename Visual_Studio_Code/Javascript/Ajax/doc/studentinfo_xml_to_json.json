@@ -1,0 +1,13 @@
+{
+    "students": {
+
+        "student": [  
+            { "gradepoint": "1.0 학점" },
+            { "gradepoint": "2.0 학점" },
+            { "gradepoint": "3.0 학점" },
+            { "gradepoint": "4.0 학점" }
+        ]
+
+    }
+
+}

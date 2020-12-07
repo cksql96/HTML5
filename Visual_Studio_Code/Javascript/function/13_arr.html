@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var city = ["Seoul", ,"Busan", ,"Incheon"];
+
+        function printArr() {
+            console.log("printArr() invoked...");
+            console.log("length: ", city.length);
+
+            for(var element of city) {
+                console.log(">>>:",element);
+            }   //enhanced for
+        }   //printArr
+
+        printArr();
+    </script>
+
+</body>
+
+</html>

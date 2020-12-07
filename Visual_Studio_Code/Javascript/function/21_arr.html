@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arrdata = [];
+        // var arrdata = new Array();
+
+        function insertArr() {
+            console.log("insertArr() invoked...");
+
+            for(var i = 0; i <= 99; i++) {
+                arrdata[i] = i+1;           //1~100까지 저장
+            }   //for
+
+            selectArr();    //함수호출!!!
+        }   //insertArr
+
+        function selectArr() {
+            console.log("selectArr() invoked...");
+
+            for(element of arrdata) {
+                console.log("element:", element);
+            }   //enhanced for
+
+            addArr();       //함수호출
+        }   //select Arr
+
+        function addArr() {
+            console.log("addArr() invoked...");
+
+            var sum = 0;
+
+            for(adding of arrdata) {
+                sum += adding;
+            }   //enhanced for
+
+            console.log("배열 데이터 덧셈연산 결과: ", sum);
+        }   //addArr()
+
+    </script>
+
+    <button type="button" onclick="insertArr()">배열 생성/조회/연산</button>
+
+</body>
+
+</html>

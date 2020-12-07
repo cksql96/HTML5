@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js"></script>
+
+    <script src="./js/window_event_handlers.js"></script>
+    <script src="./js/aJax_globalEvents_Lifecycle.js"></script>
+    <script src="./js/ajax_common_setup.js"></script>
+
+    <script>
+
+        //jQuery(document).ready(function() {
+        //$(document).ready(function () {
+        $(function() {
+            console.clear()
+
+            $.ajax({
+
+                //eclipse의 myweb에 com.zerock.myweb.servlet을 참조
+                //그리고 그 주소를 url에 넣으면,
+                //CORS 폴리시 위배를 풀수 있다.
+                url: "http://localhost:9900/myweb/GetJSON",
+                type: "GET",
+                dataType: "JSON",
+                timeout: 1000,
+
+                success: function(doc, status, XHR) {
+                    console.log("-------------------------------------------------------");
+                    console.log("");
+                    console.log("-------------------------------------------------------");
+
+                    console.log("+doc:", doc, ", $(this):", $(this) );
+                    console.log("+status:", status);
+
+                    printXHR1(XHR);
+
+                    //JSON BINDING
+                    if(doc.length > 0) {
+                        var tb = $("<table/>");
+
+                        for(var person of doc) {
+                            var row = $("<tr/>").append(
+                                $("<td/>").text(person.id),
+                                $("<td/>").text(person.first_name),
+                                $("<td/>").text(person.last_name),
+                                $("<td/>").text(person.email),
+                                $("<td/>").text(person.gender),
+                            );  //append
+
+                            tb.append(row);
+                        }   //enhanced for-of
+
+                        $("#wrap").append(tb);
+                    } else {
+                        $("#wrap").html("<h2>No data.</h2>");
+                    }   //if-else
+
+                },  //success
+
+                error: function(XHR) {
+                    $("#wrap").html("<h2>Error!!! </h2>");
+                }   //error
+
+            });  //$.ajax
+
+        }); //Jquery
+    </script>
+</head>
+
+<body>
+    
+    <div id="wrap"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [10, 20, 30, 40, '50'];
+
+        function printArr() {
+            var i, sum = 0;
+
+            for(i = 0; i< arr.length; i++) {
+                sum += arr[i];
+            }   //for
+            return sum;
+        }   //printArr
+
+        var result = printArr();
+
+        console.log("배열 원소 합: " + result);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var city = ["Seoul", "Busan", "Incheon", 3, 2, true];
+
+        console.log("city: ", city);
+
+        delete city[4];
+
+        city[3] = null;
+
+        console.log("city: ", city);
+
+        function printArr() {
+            console.log("printArr() invoked...");
+
+            var i;
+
+            for(i = 0; i < city.length; i++) {
+                console.log("배열 데이터[" + i + "] =", city[i]);
+            }   //for
+
+            // for(var cityName of city) {      //배열 안의 value값을 뽑아낸다.
+            for(var cityName of city) {         //배열 안의 index값을 뽑아낸다.
+                console.log("cityName", cityName);
+            }   //enhanced for
+
+        }   //printArr
+
+        printArr();
+    </script>
+</body>
+
+</html>

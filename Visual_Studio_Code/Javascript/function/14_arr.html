@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var com = [95, 88, , 72, 68, , 99, 82, 78, 85];
+        var getAvg;
+
+        function printAvg() {
+            console.log("printAvg() invoked...");
+
+            var i, sum = 0;
+            var n = com.length;
+            var count = 0;
+
+            for(total of com) {
+                console.log(total);
+
+                if(total === undefined) {
+                    continue;
+                } else{                    
+                    count++;
+                    sum += total;
+                }   //if-else
+
+            }   //for            
+
+            console.log("총" + n + "명의 점수 중");
+            console.log((n-count) + "명의 점수가 undefined로", count, "명의 점수로 평균을 냅니다.");
+
+            console.log("sum: " + sum);
+            console.log("count: " + count);
+
+            return (sum / count);
+        }   //printAvg
+
+        getAvg = printAvg();
+        console.log("평균: " + getAvg);
+    </script>
+</body>
+
+</html>

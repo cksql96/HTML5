@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+    
+    <script>
+        // jQuery(document).ready(function() {
+        // $(document).ready(function () {
+        $(function() {      //JQuery entry point
+
+            //load가 ajax와 관련된 메소드이다. 마우스를 올려보면, XHR객체가 있다.
+            //load라는것은, 선택자를 요구를 한다. 왼쪽은, html전체를 의미하는 선택자.
+            //그 뒤에는 그 html안에 있는 id나 클래스의 이름의 선택자를 넣는다.
+            //load는 그 지정된것을 앞에있는 #newsWrap_1에 넣어라. 라는 뜻이다.
+            $("#newsWrap_1").load("jquery_ajax_1_news.html #news_1"); //load
+
+            $("#newsWrap_2").load("jquery_ajax_1_news.html #news_2"); //load
+
+        }); //JQuery
+    </script>
+</head>
+
+<body>
+    
+    <h1>Load 1</h1>
+    <div id="newsWrap_1"></div>
+
+    <h1>Load 2</h1>
+    <div id="newsWrap_2"></div>
+
+</body>
+
+</html>

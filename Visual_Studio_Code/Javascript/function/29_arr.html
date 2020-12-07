@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var kdata = ['서울', '부산', '구포', '대구', '대전'];
+
+        console.log("Original:", kdata);
+        console.log("==========================");
+
+        var str1 = kdata.splice(1,2);
+        console.log("kdata.splice(1,2): " + str1);
+        console.log("남은배열:", kdata);
+        console.log("-------------------------");
+
+        var str2 = kdata.splice(1, 1, '강릉', '세종');
+        console.log("kdata.splice(1, 1, '강릉', '세종'):", str2);
+        console.log("남은배열:", kdata);
+        console.log("-------------------------");
+
+        var str3 = kdata.splice(2, Number.MAX_VALUE);
+        console.log("kdata.splice(2, Number.MAX_VALUE):", str3);
+        console.log("남은배열:", kdata);
+        console.log("==========================");
+
+        console.log("Original:", kdata);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>  
+
+
+    
+    <script>
+        
+        // @@@@@@@@@@@@@@@@@@@@@@@@@연관배열@@@@@@@@@@@@@@@@@@@@@@@@@
+        // "키" : "값"
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@객체리터럴@@@@@@@@@@@@@@@@@@@@@@@@@
+        // 키 : "값"
+
+        var person = {
+
+            name: "Chan",
+            age: 23,
+            nation: "Korea",
+            isMale: true,
+
+            children: [1,2],
+
+            obj: {
+                field1: 10,
+                field2: 0.2,
+                field3: "value"
+            },  //obj
+
+            run: function() {
+                ;;
+            },   //run메소드
+
+            stop: function() {
+                ;;
+            }   //stop메소드
+
+        };  //person객체
+
+        var json = JSON.stringify(person);
+        console.log("json(person):", json);
+        
+        var personArray = ["aaa", "bbb"];
+
+        var json2 = JSON.stringify(personArray);
+        console.log("json2(personArray):", json2)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var city = new Array("Seoul", "Busan", "Incheon");
+
+        function printArr() {
+            var i;
+
+            for(i = 0; i < city.length; i++) {
+                console.log("배열데이터[" + i + "] =", city[i]);
+            }   //for
+        }   //printArr
+
+        console.log(city);
+
+        console.log("Array.isArray(city) = ", Array.isArray(city));
+
+        console.log("city instanceof Array", city instanceof Array);
+
+        printArr();
+    </script>
+</body>
+
+</html>

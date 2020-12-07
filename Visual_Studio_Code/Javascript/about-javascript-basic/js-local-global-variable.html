@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+        var globalVar1;                                 //전역변수 선언
+            globalVar2 = 0;                             //전역변수 정의
+
+        console.log("globalVar1:", globalVar1);         
+        console.log("globalVar2:", globalVar2);
+
+        function 함수(){                                //함수선언
+            console.log("함수() 호출");                 
+
+            var localVar;                               //지역변수 선언
+                globalVar3 = 0;                         //전역변수 정의
+
+            console.log("localVar:", localVar);
+            console.log("globalVar3:", globalVar3);
+
+            localVar = 10;                              //지역변수 정의
+            console.log("localVar:", localVar);
+        }   //함수
+
+        함수();                                         //함수호출
+
+        globalVar3 = 20;                                //전역변수 정의
+        console.log("globalVar3:", globalVar3);
+
+        console.log("localVar:",localVar);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

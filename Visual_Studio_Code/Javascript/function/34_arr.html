@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        var data = [1,2,3,4,5,6,7,8,9,10];
+
+        function mapArr(value) {
+            console.log("mapArr(" + value + ") invoked...");
+
+            return "" + value * value;
+        }   //mapArr
+
+        var mapdata = data.map(mapArr);
+
+        console.log("원래배열:", data);
+        console.log("map메소드 적용배열:", mapdata);
+        
+    </script>
+
+</body>
+
+</html>
