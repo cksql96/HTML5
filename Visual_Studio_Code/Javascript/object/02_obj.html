@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+    <script>
+
+        var obj = { //사용자 정의 객체 정의 by 객체리터럴방식
+            m1: function() {        //익명함수를 이용한 메소드 선언1
+                console.log("obj::m1() invoked...");
+
+                return "Hello Sonata";
+            },  //m1
+
+            m2: function(a) {       //익명함수를 이용한 메소드 선언2
+                console.log("obj::m2(a) invoked...");
+                
+                var result = a;
+                return result
+            },  //m2
+
+            m3: function ff(a,b) {  //이름있는 함수를 이용한 메소드 선언3
+                console.log("obj::ff(a,b) invoked...");
+
+                var result = a + b;
+                return result;
+            }   //m3
+        };  //생성한 객체의 참조(=주소)를 저장하는 참조변수 정의
+
+        //DOM tree 조작:
+        //사용자정의 객체의 메소드의 리턴값으로, 그의 문단태그의
+        //contents(즉, 시작태그와 끝내그 사이의 값) 변경
+        document.getElementById("msg1").innerHTML = obj.m1();
+        document.getElementById("msg2").innerHTML = obj.m2(100);
+        document.getElementById("msg3").innerHTML = obj.m3(100,200);
+
+        // document.getElementById("msg3").innerHTML = m2(200);         //XX
+        // document.getElementById("msg3").innerHTML = ff(300,200);     //XX
+
+        console.log(obj);
+    </script>
+    
+</body>
+
+</html>

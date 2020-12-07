@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>[Chan's Car]</p>
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+
+    <p>[Kim's Car]</p>
+    <p id="carname2"></p>
+    <p id="carcolor2"></p>
+    <p id="carspeed2"></p>
+
+    <script>
+        function Car(name, color, speed) {
+            //함수내에서 this 키워드를 사용하여 맴버 추가
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+
+            this.speedup = function() {
+                return this.speed + 10;
+            };   //speedup
+
+            this.speeddown = function() {
+                return this.speed - 10;
+            };   //speeddown
+        };
+
+
+        var ChanCar = new Car("Sonata", "blue", 100);
+        var KimCar = new Car("jeep", "red", 70);
+
+        var cname = document.getElementById("carname");
+        cname.textContent = '자동차이름: ' + ChanCar.name;
+
+        var colname = document.getElementById("carcolor");
+        colname.textContent = '자동차색상: ' + ChanCar.color;
+
+        var cspeed = document.getElementById("carspeed");
+        cspeed.textContent = '자동차속도: ' + ChanCar.speedup();
+
+        //=================================================================//
+
+        var cname = document.getElementById("carname2");
+        cname.textContent = '자동차이름: ' + KimCar.name;
+
+        var colname = document.getElementById("carcolor2");
+        colname.textContent = '자동차색상: ' + KimCar.color;
+
+        var cspeed = document.getElementById("carspeed2");
+        cspeed.textContent = '자동차속도: ' + KimCar.speeddown();
+
+    </script>
+</body>
+
+</html>

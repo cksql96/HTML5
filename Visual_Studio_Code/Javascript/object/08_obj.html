@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>[Car1]</p>
+    <p id="data10"></p>
+    <p id="data20"></p>
+    <p id="data30"></p>
+
+    <p>[Car2]</p>
+    <p id="data11"></p>
+    <p id="data21"></p>
+    <p id="data31"></p>
+
+    <p>[Car3]</p>
+    <p id="data12"></p>
+    <p id="data22"></p>
+    <p id="data32"></p>
+
+    <script>
+
+        //원소가 객체인 배열 = 객체배열
+        var car = [
+            //객체 리터럴방식으로 객체를 선언
+            {name:'Sonata', color:'blue', speed:100 },
+            {name:'Jeep', color:'red', speed:70 },
+            {name:'passt', color:'white', speed:150 }
+        ];  //객체배열 생성
+
+        var count = 0;
+        for(var ele of car) {
+            var cname = document.getElementById("data1" + count);
+            cname.textContent = "자동차 이름: " + car[count].name;
+
+            var colname = document.getElementById("data2" + count);
+            colname.textContent = "자동차 색상: " + car[count].color;
+
+            var cspeed = document.getElementById("data3" + count);
+            cspeed.textContent = "자동차 속도: " + car[count].speed;
+
+            console.log(car[count]);
+
+            count ++;            
+        }   //enhanced for
+
+        console.log(car);
+
+    </script>
+</body>
+
+</html>

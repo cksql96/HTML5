@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+
+    ========================================================
+
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+    <p id="t4"></p>
+
+    ========================================================
+
+    <p id="a1"></p>
+    <p id="a2"></p>
+    <p id="a3"></p>
+    <p id="a4"></p>
+    <p id="a5"></p>
+    <p id="a6"></p>
+    <p id="a7"></p>
+    <p id="a8"></p>
+    <p id="a9"></p>
+
+    <script>
+
+        //기본생성자
+        document.getElementById("d1").innerHTML = new Date();
+        
+        //1970.01.01이후의 밀리초 계산
+        document.getElementById("d2").innerHTML = new Date(1491803527400);
+
+        //문자열 날짜
+        document.getElementById("d3").innerHTML = new Date("October 15, 2018 06:18:07");
+
+        //날짜지정- month는 0부터 시작
+        document.getElementById("d4").innerHTML = new Date(2018, 11, 25, 18, 30, 29);
+
+        var now = new Date();
+        console.log(now);
+
+        //=============================================//
+
+        //Built-in Date() 생성자 함수를 이용한 Date객체 생성
+        var today = new Date();
+
+        document.getElementById("t1").innerHTML = today.getFullYear() + "년";
+
+        document.getElementById("t2").innerHTML = 
+                            today.getMonth() + 1 + "월 " + 
+                            today.getDate() + "일";
+
+        document.getElementById("t3").innerHTML = 
+                            today.getHours() + "시 " + 
+                            today.getMinutes() + "분 " + 
+                            today.getSeconds() + "초";
+
+        document.getElementById("t4").innerHTML =
+                            "1970년 1월 1일 이후 현재까지 몇초가 지났나요?<br />" + 
+                            today.getTime() + "ms가 지났습니다.";
+
+        //=============================================//
+
+        document.getElementById("a1").innerHTML = "toDateString() = " + today.toDateString();
+
+        document.getElementById("a2").innerHTML = "toISOString() = " + today.toISOString();
+
+        document.getElementById("a3").innerHTML = "toJSON() = " + today.toJSON();
+
+        document.getElementById("a4").innerHTML = "toLocaleDateString() = " + today.toLocaleDateString();
+
+        document.getElementById("a5").innerHTML = "toLocaleTimeString() = " + today.toLocaleTimeString();
+
+        document.getElementById("a6").innerHTML = "toLocaleString() = " + today.toLocaleString();
+
+        document.getElementById("a7").innerHTML = "toString() = " + today.toString();
+
+        document.getElementById("a8").innerHTML = "toTimeString() = " + today.toTimeString();
+
+        document.getElementById("a9").innerHTML = "toUTCString() = " + today.toUTCString();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+
+    <script>
+
+        //맴버가 없는 빈 객체생성 by Object() 생성자 함수
+        var car = new Object();
+        console.log("car: ", car);
+
+        //빈 객체에 속성과 메소드의 추가
+        car.name = 'Sonata';        //필드선언
+        car.speed = 100;            //필드선언
+        car.color = 'blue';         //필드선언
+
+        car.speedup = function() {  //메소드 선언
+            console.log("car::speedup() invoked...");
+
+            return this.speed + 10;
+        };  //car::speedup
+        console.log("car: ", car);
+
+        //-------------------------------------------//
+        //DOM tree조작 및 객체의 사용
+
+        var cname = document.getElementById("carname");
+        cname.textContent = '자동차이름: ' + car.name;
+
+        var colname = document.getElementById("carcolor");
+        colname.textContent = "자동차 색상: " + car.color;
+
+        var cspeed = document.getElementById("carspeed");
+        cspeed.textContent = "자동차 속도: " + car.speedup();
+    </script>
+</body>
+
+</html>

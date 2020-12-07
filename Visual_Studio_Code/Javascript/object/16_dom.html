@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function add() {
+            //새로운 이미지 태그 생성
+            var img = document.createElement('img');
+
+            //이미지 태그에 src/width/height속성 생성 및 속성값 설정
+            img.src = "https://picsum.photos/id/600/400";
+            img.width = 100;
+            img.height = 122;
+
+            document.body.appendChild(img);
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- #은 링크를 막아놓는다. -->
+    <a href="#" onclick="add()">사진?</a> 
+
+</body>
+
+</html>

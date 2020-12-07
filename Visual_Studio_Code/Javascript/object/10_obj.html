@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p id="car"></p>
+
+    <p>[Car0 속성]</p>
+    <p id="car0"></p>
+
+    <p>[Car1 속성]</p>
+    <p id="car1"></p>
+
+    <p>[Car2 속성]</p>
+    <p id="car2"></p>
+
+    <script>
+        //내장(built-in) Array생성자 함수를 이용한 "배열"객체 생성
+        //대신, 생성한 배열의 원소가 또 다른 배열객체임
+        //즉, 2차원행령(Matrix)생성
+        //2차원 행렬의 특정 원소(Cell)를 참조하려면, 인덱스 기호가 2개 필요
+        //즉 [][]
+        var car = new Array (
+            ['Sonata', 'blue', 100],        //원소가 또 다른 배열 리터럴 객체임.
+            ['Jeep', 'red', 70],
+            ['Passt', 'white', 150]
+        );  //2차원 행렬 생성 by Array 생성자 함수
+
+        //2차원 행렬의 참조(사용): 2개의 인덱스기호 필요
+        var cname = document.getElementById("car");
+        cname.textContent = "car[2][1] : " + car[2][1];
+
+        for(var i = 0; i < 3; i++) {
+            var cname = document.getElementById("car" + i);
+            cname.textContent = car[i];
+
+            console.log(car[i]);
+        }   //for
+
+        console.log(car);
+
+
+    </script>
+</body>
+
+</html>

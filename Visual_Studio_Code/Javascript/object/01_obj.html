@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p id="var1">dd</p>
+    <p id="var2">sdf</p>
+    <p id="var3">qweg</p>
+    <p id="var4">qweg</p>
+
+    <h2>잘 되자</h2>
+    <h2>잘 되자</h2>
+    <h2>잘 되자</h2>
+
+    <script>
+        //객체 리터럴 선언을 통한, 새로운 객체의 생성
+        var car = {
+            name: 'Sonata',
+            speed: 100,
+            color: 'White',
+
+            //run 메소드
+            run: function() {
+                console.log("달립니다.");
+            }   //run
+
+        };  //사용자 정의 객체
+
+        console.log("car:", car);
+        console.log("name:", car.name);
+        console.log("speed:", car.speed);
+        console.log("color", car.color);
+        car.run();
+        car['run']();
+
+        console.log("document:", document);
+        
+        document.getElementById("var1").innerHTML = '<code>var name = 10;</code>';
+        // document.getElementById("var1").textContent = '<code>var name = 10;</code>';
+
+        var h2 = document.getElementsByTagName("h2");
+
+        console.log(h2);
+
+        
+        for(var h2tag of h2) {
+            h2tag.textContent = "hihi";
+            h2tag.style.color = 'red';
+        }   //for
+
+
+        
+        console.log("var1:", document.getElementById("var1").innerHTML );
+
+
+        // document.getElementById("var1").innerHTML="자동차이름:" + car['name'];
+        // document.getElementById("var2").innerHTML="자동차속도:" + car.speed;
+        // document.getElementById("var3").innerHTML="자동차색상:" + car.color;
+
+    </script>
+</body>
+
+</html>
